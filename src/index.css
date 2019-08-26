@@ -15,3 +15,7 @@ code {
 .nav-wrapper {
   background-color: red;
 }
+
+.DashboardContainer {
+  /* This section is for stylizing the dashboard container found in dashboard.js */
+}
