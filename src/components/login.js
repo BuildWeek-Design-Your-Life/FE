@@ -22,8 +22,8 @@ const Login = ({ history }) => {
   };
   return (
     <Container className="login-container">
-      <Form>
-        <FormGroup onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
+        <FormGroup>
           <label htmlFor="#username">Username</label>
           <FormInput 
           id="#username" 
