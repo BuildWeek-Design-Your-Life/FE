@@ -2,21 +2,25 @@ import React, { useState } from "react";
 import { Form, FormInput, FormGroup, Button, Container } from "shards-react";
 import axios from "axios";
 
-export default function Login () {
+export default function Login ( {history} ) {
   const [user, setUser] = useState({username: "", password: ""});
 
   const changeHandler = event => {
     event.preventDefault();
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setUser({...user, [event.target.name]: event.target.value})
   }
+
+  // setUser({username: "", password: ""});
 
   const submitForm = event => {
     event.preventDefault();
     axios
-      .post("https://reqres.in/api/users")
+      .post("https://design-bw.herokuapp.com/api/auth/login", user)
       .then(res => {
-        setUser({username: "", password: ""});
+        console.log(res);
+        localStorage.setItem('token', res.data.payload);
+        history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
