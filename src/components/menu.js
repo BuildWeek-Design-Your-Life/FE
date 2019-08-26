@@ -1,9 +1,10 @@
 import React from "react";
 import { Nav, NavItem, NavLink } from "shards-react";
+import {Link} from 'react-dom'
 
 export default function Menu() {
   return (
-    <Nav className="nav-container">
+    <Nav justified className="nav-container">
       <NavItem>
         <NavLink active href="#">
           Home
@@ -13,7 +14,7 @@ export default function Menu() {
         <NavLink href="#">Dashboard</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink href="#">Sign In</NavLink>
+        <NavLink to="/login" href="#">Sign In</NavLink>
       </NavItem>
     </Nav>
   );

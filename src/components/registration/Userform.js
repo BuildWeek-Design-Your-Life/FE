@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "shards-react";
 import FormUserDetails from "./FormUserDetails";
-import FormFirstPost from "./FormFirstPost";
 import Confirm from "./Confirm";
 import Success from "./Success";
 export class Userform extends Component {
@@ -51,16 +50,8 @@ export class Userform extends Component {
             values={values}
           />
         );
+
       case 2:
-        return (
-          <FormFirstPost
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 3:
         return (
           <Confirm
             nextStep={this.nextStep}
@@ -68,7 +59,7 @@ export class Userform extends Component {
             values={values}
           />
         );
-      case 4:
+      case 3:
         return (
           <Success
             nextStep={this.nextStep}
