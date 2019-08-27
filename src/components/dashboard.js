@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Slider, Container } from "shards-react";
+import { Card,
+  CardHeader,
+  CardTitle,
+  CardImg,
+  CardBody,
+  CardFooter,
+  Buttoner, 
+  Container } from "shards-react";
 import Menu from "../components/menu";
 import "../index.css";
 import shards from "shards-react";
@@ -31,31 +38,26 @@ export default class Dashboard extends Component {
         <Container className="DashboardContainer">
           <h1>Dashboard</h1>
           {/* This section is designed to pull all of the material from the activities section of the database and show it here. */}
-        </Container>
-        <Container className="DashboardContainer">
-          {/* // This section needs to pull in the exercise className */}
-          <div>
-            <h1>Activity Name:</h1>
-            {/* // Code to pull activity name from database
-                    let activity = axios.get(username.activitynumber);
-                    console.log activity */}
-          </div>
-          {/* // This section needs to create a slider for inputting the new entry */}
-          <Slider
-            connect={[true, false]}
-            start={[1]}
-            range={{ min: 0, max: 5 }}
-          />
-          {/* // This section should tally the daily average
-            // This section will get the previous total
-               let total = axios.get(username.activitynumber.total);
-            // This section will get the total number of days and add 1. Finally saving it.
-                // days = days + 1
-                let days = axios.get(username.activitynumber.days) + 1; 
-            // This section will add the new total to the previous total and save the input
-                // let newTotal = total + Slider
-            // This section will show the results of newtotal/totalnumber of days.
-                let average = newTotal / days; */}
+        <Card style={{ maxWidth: "300px" }}>
+      <CardHeader>Activities</CardHeader>
+      <CardImg src="https://place-hold.it/300x200" />
+      <CardBody>
+        <CardTitle>Lorem Ipsum</CardTitle>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <Button>Read more &rarr;</Button>
+      </CardBody>
+        <CardFooter>Good Job!</CardFooter>
+      </Card>
+      <Card style={{ maxWidth: "300px" }}>
+      <CardHeader>Reflection</CardHeader>
+      <CardImg src="https://place-hold.it/300x200" />
+      <CardBody>
+        <CardTitle>Lorem Ipsum</CardTitle>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <Button>Read more &rarr;</Button>
+      </CardBody>
+        <CardFooter>Thanks for Sharing!</CardFooter>
+      </Card>
         </Container>
       </>
     );
