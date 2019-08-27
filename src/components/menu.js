@@ -53,13 +53,13 @@ export default class Menu extends React.Component {
   render() {
     return (
       <Navbar sticky="true" type="dark" className="navbar" expand="md">
-        <NavbarBrand href="#">Design Your Life</NavbarBrand>
+        <NavbarBrand href="/">Design Your Life</NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
 
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink active href="#">
+              <NavLink to="/login" active href="login">
                 Dashboard
               </NavLink>
             </NavItem>
