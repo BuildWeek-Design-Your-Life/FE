@@ -4,8 +4,7 @@ import {
     Card,
     CardHeader,
     CardBody,
-    Container, 
-    Row
+    Container
   } from "shards-react";
 
   import "../../App.css";
