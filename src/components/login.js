@@ -24,7 +24,7 @@ const Login = ({ history }) => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        history.push("/activity");
+        history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
