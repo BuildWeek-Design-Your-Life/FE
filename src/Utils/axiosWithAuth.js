@@ -5,7 +5,7 @@ export const axiosWithAuth = () => {
     console.log('token', token)
     return axios.create({
         headers: {
-            Authorization: token
+            Token: token
         }
     })
 }
