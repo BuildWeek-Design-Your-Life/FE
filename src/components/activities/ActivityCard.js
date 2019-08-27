@@ -1,16 +1,39 @@
 import React from "react";
 
-import { Container, Row } from "shards-react";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    Container, 
+    Row
+  } from "shards-react";
+
+  import "../../App.css";
 
 export default function ActivityCard(props) {
   return (
-    <Container>
-      <Row>
-        THIS IS WHERE THE ACTIVITY CARD
-        {/* <h2>{props.activity.activity}</h2> 
-                <p>Energy: {props.activity.energize}</p>
-                <p>Engagement: {props.activity.engagement}</p> */}
-      </Row>
-    </Container>
+
+    <Container className="card-container">
+        <Card className="card">
+            <CardHeader className="card-header">Activity Name</CardHeader>
+            <CardBody className="card-body">
+                <p>Energy: </p>
+                <p>Engagement: </p>
+            </CardBody>
+        </Card>
+        <Card className="card">
+            <CardHeader className="card-header">Activity Name</CardHeader>
+            <CardBody className="card-body">
+                <p>Energy: </p>
+                <p>Engagement: </p>
+            </CardBody>
+        </Card>
+        <Card className="card">
+            <CardHeader className="card-header">Activity Name</CardHeader>
+            <CardBody className="card-body">
+                <p>Energy: </p>
+                <p>Engagement: </p>
+            </CardBody>
+        </Card>
   );
 }
