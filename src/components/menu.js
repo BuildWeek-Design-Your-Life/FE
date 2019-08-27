@@ -97,7 +97,11 @@ export default class Menu extends React.Component {
               </DropdownMenu>
             </Dropdown>
           </Nav>
+<<<<<<< HEAD
         </Collapse> 
+=======
+        </Collapse>
+>>>>>>> a32d9067c4f6f6f580278697cec03d21ba615cd9
       </Navbar>
     );
   }
