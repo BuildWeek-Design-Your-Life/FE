@@ -25,7 +25,7 @@ export default class ActivitiesPost extends Component {
     console.log("Submitted");
     event.preventDefault();
     axios
-      .post("https://design-bw.herokuapp.com/api/activity", {
+      .put("https://design-bw.herokuapp.com/api/activity", {
         activity: activity,
         engagement: engagement,
         energize: energize

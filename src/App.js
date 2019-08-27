@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-
+import axios from "axios";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Login from "./components/login";
@@ -13,19 +13,25 @@ import Userform from "./components/registration/Userform";
 import { Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import ActivitiesPost from "./components/activities/ActivitiesPost";
+import ReflectionsList from "./components/relfections/ReflectionsList";
 
-function App() {
-  return (
-    <div className="App">
-      <Menu />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/activity" component={ActivitiesList} />
-      <Route exact path="/register" component={Registration} />
-      <PrivateRoute exact path="/activity/create" component={ActivitiesPost} />
-      <Footer />
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Menu />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/activity" component={ActivitiesList} />
+        <Route exact path="/reflection" component={ReflectionsList} />
+        <Route exact path="/register" component={Registration} />
+        <PrivateRoute
+          exact
+          path="/activity/create"
+          component={ActivitiesPost}
+        />
+        <Footer />
+      </div>
+    );
+  }
 }
-
-export default App;

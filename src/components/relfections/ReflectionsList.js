@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReflectionCard from "./ReflectionCard";
+import ReflectionCard from "./RelfectionCard";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
 
 const ReflectionsList = () => {
@@ -23,7 +23,11 @@ const ReflectionsList = () => {
   return (
     <div className="reflections-list">
       {reflectionsArray.map(reflect => (
-        <ReflectionCard key={reflect.id} {...reflectionsArray} reflect={reflect} />
+        <ReflectionCard
+          key={reflect.id}
+          {...reflectionsArray}
+          reflect={reflect}
+        />
       ))}
     </div>
   );
