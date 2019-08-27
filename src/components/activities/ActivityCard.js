@@ -14,30 +14,12 @@ export default function ActivityCard(props) {
   return (
     <Container className="card-container">
         <Card className="card">
-            <CardHeader className="card-header">Activity Name</CardHeader>
+            <CardHeader className="card-header">{props.active.activity}</CardHeader>
             <CardBody className="card-body">
-                <p>Energy: </p>
-                <p>Engagement: </p>
+                <p>Energy: {props.active.energize}</p>
+                <p>Engagement: {props.active.engagement}</p>
             </CardBody>
         </Card>
-        <Card className="card">
-            <CardHeader className="card-header">Activity Name</CardHeader>
-            <CardBody className="card-body">
-                <p>Energy: </p>
-                <p>Engagement: </p>
-            </CardBody>
-        </Card>
-        <Card className="card">
-            <CardHeader className="card-header">Activity Name</CardHeader>
-            <CardBody className="card-body">
-                <p>Energy: </p>
-                <p>Engagement: </p>
-            </CardBody>
-        </Card>
-
-        {/* <h2>{props.activity.activity}</h2> 
-                <p>Energy: {props.activity.energize}</p>
-                <p>Engagement: {props.activity.engagement}</p> */}
     </Container>
   );
 }

@@ -7,16 +7,14 @@ export default function ActivitiesList() {
     const [activitiesArray, setActivities] = useState([]);
 
     const getActivities = () => {
-        axiosWithAuth()
-            .get('https://design-bw.herokuapp.com/api/activity/')
-            .then(response => {
-                console.log(response);
-                // const activities = response.data;
-                // setActivities(response);
-            })
+        return axiosWithAuth()
+            .get("https://design-bw.herokuapp.com/api/activity")
+            .then(res => {
+                setActivities(res.data);
+        })
             .catch(err => {
-                console.log(err.response);
-            }) 
+                console.log('This is bad', err.response);
+        }) 
     }
 
     useEffect(() => {
@@ -25,8 +23,9 @@ export default function ActivitiesList() {
     
     return (
         <div className="activities-list grid-view">
-            {/* { activitiesArray.map(activity => <ActivityCard activity={activity} /> ) } */ }
-            Hi
+            {activitiesArray.map(active => 
+                <ActivityCard key = {active.id} {...activitiesArray} active={active} />
+            )}
         </div>
     )
 }
