@@ -8,9 +8,7 @@ export class Userform extends Component {
     step: 1,
     username: "",
     password: "",
-    email: "",
-    activity: "",
-    engagement: ""
+    email: ""
   };
 
   // Proceed to next step
@@ -38,8 +36,8 @@ export class Userform extends Component {
 
   render() {
     const { step } = this.state;
-    const { username, password, email, activity, engagement } = this.state;
-    const values = { username, password, email, activity, engagement };
+    const { username, password, email } = this.state;
+    const values = { username, password, email };
 
     switch (step) {
       case 1:
