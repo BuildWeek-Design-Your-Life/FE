@@ -1,11 +1,16 @@
 import React from "react";
 import axios from "axios";
 import "../index.css";
-import shards from "shards-react"
+import {
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from "shards-react";
 
 instance.defaults.headers.common['Authorization'] = token;
 
-export default function Dashboard() {
+export default function Reflections() {
     return (
         <Container classname = "DashboardContainer">
             <h1>Dashboard</h1>
