@@ -23,7 +23,7 @@ function App() {
       <Menu />
       <Route exact path="/login" component={Login} />
       <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/activity" component={ActivityCard} />
+      <Route exact path="/activity" component={ActivitiesList} />
       <Route exact path="/register" component={Registration} />
       <Footer />
     </div>

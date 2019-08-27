@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import ActivityCard from "./ActivityCard";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
+
 // import axios from 'axios'
 
 const ActivitiesList = () => {

@@ -37,7 +37,7 @@ const Login = ({ history }) => {
           <p>
             This app helps you figure out which activites bring you enjoyment,
             energy, and engagement. These clues are the first step you need to
-            take to design your ideal ife.
+            take to design your ideal life.
             <p>
               The journal includes an activity log and a reflection log.
               Activity logs record daily your main activities, and a guage to
