@@ -1,4 +1,4 @@
-+import React from "react";
+import React from "react";
 import styled from "styled-components";
 
 let GridContainer = styled.div`
@@ -18,9 +18,9 @@ export default function ActivityCard (props) {
     return (
         <GridContainer>
             <GridItem>
-                <h2>{props.activity.activity}</h2> 
+                {/* <h2>{props.activity.activity}</h2> 
                 <p>Energy: {props.activity.energize}</p>
-                <p>Engagement: {props.activity.engagement}</p>
+                <p>Engagement: {props.activity.engagement}</p> */}
             </GridItem>
         </GridContainer>
     )
