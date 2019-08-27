@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-
 import ActivityCard from "./ActivityCard";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
-
-// import axios from 'axios'
 
 const ActivitiesList = () => {
   const [activitiesArray, setActivities] = useState([]);
@@ -24,7 +21,7 @@ const ActivitiesList = () => {
   }, []);
 
   return (
-    <div className="activities-list grid-view">
+    <div className="activities-list">
       {activitiesArray.map(active => (
         <ActivityCard key={active.id} {...activitiesArray} active={active} />
       ))}
