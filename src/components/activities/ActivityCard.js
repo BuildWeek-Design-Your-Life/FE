@@ -6,7 +6,7 @@ export default function ActivityCard(props) {
   return (
     <Container>
       <Row>
-        THIS IS WHERE THE ACTIVITY CARD GOES
+        THIS IS WHERE THE ACTIVITY CARD
         {/* <h2>{props.activity.activity}</h2> 
                 <p>Energy: {props.activity.energize}</p>
                 <p>Engagement: {props.activity.engagement}</p> */}

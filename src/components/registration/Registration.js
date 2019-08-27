@@ -22,7 +22,7 @@ export default class Registration extends Component {
     });
   }
   handleSubmit(event) {
-    const { username, email, password, password_comfirmation } = this.state;
+    const { username, email, password } = this.state;
     console.log("Submitted");
     event.preventDefault();
     axios
@@ -32,8 +32,7 @@ export default class Registration extends Component {
           user: {
             username: username,
             email: email,
-            password: password,
-            password_confirmation: password_comfirmation
+            password: password
           }
         },
         { withCredentials: true }
@@ -48,7 +47,7 @@ export default class Registration extends Component {
 
   render() {
     return (
-      <>
+      <Container className="registration">
         <form onSubmit={this.handleSubmit}>
           <input
             type="username"
@@ -75,17 +74,10 @@ export default class Registration extends Component {
             onChange={this.handleChange}
             required
           />
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Password Confirmation"
-            value={this.state.password_comfirmation}
-            onChange={this.handleChange}
-            required
-          />
+
           <button type="submit"> Register </button>
         </form>
-      </>
+      </Container>
     );
   }
 }
