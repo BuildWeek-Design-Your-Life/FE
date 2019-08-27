@@ -12,6 +12,7 @@ import {
 
 export default function ActivityCard(props) {
   return (
+
     <Container className="card-container">
         <Card className="card">
             <CardHeader className="card-header">Activity Name</CardHeader>
@@ -34,10 +35,5 @@ export default function ActivityCard(props) {
                 <p>Engagement: </p>
             </CardBody>
         </Card>
-
-        {/* <h2>{props.activity.activity}</h2> 
-                <p>Energy: {props.activity.energize}</p>
-                <p>Engagement: {props.activity.engagement}</p> */}
-    </Container>
   );
 }
