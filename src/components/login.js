@@ -69,15 +69,15 @@ const Login = ({ history }) => {
                 value={creds.password}
               />
             </FormGroup>
-            <Row>
-              <Button block squared className="login-btn">
+            <Row className="login-btn">
+              <Button block squared>
                 Login
               </Button>
             </Row>
 
-            <Row>
+            <Row className="login-btn">
               Need an account?
-              <Button block squared theme="secondary" className="login-btn">
+              <Button block squared theme="secondary">
                 Sign Up
               </Button>
             </Row>

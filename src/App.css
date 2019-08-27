@@ -72,10 +72,9 @@ h1 {
 
 /* Login/Signup */
 
-/* .login-btn {
-  width: 96%;
-  margin: 0 auto;
-} */
+.login-btn {
+  margin: 0px !important;
+}
 .login-container {
   text-align: left;
 }
