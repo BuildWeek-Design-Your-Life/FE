@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import {Container } from 'shards-react'
 export default class Registration extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +50,7 @@ export default class Registration extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
            <form onSubmit={this.handleSubmit}>
           <input
             type="username"
@@ -86,7 +87,7 @@ export default class Registration extends Component {
           />
           <button type="submit"> Register </button>
         </form>
-      </div>
+        </Container>
     );
   }
 }
