@@ -14,14 +14,23 @@ let GridItem = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
 `
-export default function ActivityCard (props) {
+// export default function ActivityCard (props) {
+//     return (
+//         // <GridContainer>
+//         //     <GridItem>
+//         //         <h2>{props.activity}</h2> 
+//         //         <p>Energy: {props.energize}</p>
+//         //         <p>Engagement: {props.engagement}</p>
+//         //     </GridItem>
+//         // </GridContainer>
+//         <div><p>Hi</p></div>
+//     )
+// }
+
+const ActivityCard = () => {
     return (
-        <GridContainer>
-            <GridItem>
-                {/* <h2>{props.activity.activity}</h2> 
-                <p>Energy: {props.activity.energize}</p>
-                <p>Engagement: {props.activity.engagement}</p> */}
-            </GridItem>
-        </GridContainer>
+        <div>Hello World</div>
     )
 }
+
+export default ActivityCard

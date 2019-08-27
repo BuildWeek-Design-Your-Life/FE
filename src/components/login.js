@@ -65,11 +65,12 @@ const Login = ({ history }) => {
       .post("https://design-bw.herokuapp.com/api/auth/login", creds)
       .then(res => {
         console.log(res);
-        localStorage.setItem("token", res.data.payload);
-        history.push("/dashboard");
+        localStorage.setItem("token", res.data.token);
+        history.push("/activites");
       })
       .catch(err => console.log(err.response));
   };
+  
   return (
     <Container className="login-container">
       <Row>
