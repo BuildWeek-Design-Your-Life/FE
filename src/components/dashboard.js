@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     axios
-      .get("https://design-bw.herokuapp.com/api/activity/")
+      .get("https://design-bw.herokuapp.com/api/activity")
 
       .then(response => {
         console.log(response.data);
@@ -28,7 +28,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <>
-        <Container classname="DashboardContainer">
+        <Container className="DashboardContainer">
           <h1>Dashboard</h1>
           {/* This section is designed to pull all of the material from the activities section of the database and show it here. */}
         </Container>

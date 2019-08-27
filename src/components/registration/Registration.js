@@ -8,9 +8,7 @@ export default class Registration extends Component {
     this.state = {
       username: "",
       email: "",
-      password: "",
-      password_comfirmation: "",
-      registrationErrors: ""
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -26,17 +24,11 @@ export default class Registration extends Component {
     console.log("Submitted");
     event.preventDefault();
     axios
-      .post(
-        "https://design-bw.herokuapp.com/api/auth/register",
-        {
-          user: {
-            username: username,
-            email: email,
-            password: password
-          }
-        },
-        { withCredentials: true }
-      )
+      .post("https://design-bw.herokuapp.com/api/auth/register", {
+        username: username,
+        email: email,
+        password: password
+      })
       .then(res => {
         console.log("reg res", res);
       })
