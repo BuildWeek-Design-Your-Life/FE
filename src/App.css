@@ -88,7 +88,6 @@ h1 {
   padding: 20px;
 }
 
-
 /* Activity Card Styles */
 .card-container {
   display: grid;
@@ -110,3 +109,8 @@ h1 {
   color: #EFEFEF;
   font-size: 1.5em;
 }
+
+.registration {
+  background-color: red;
+}
+

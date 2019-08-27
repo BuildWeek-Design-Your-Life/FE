@@ -8,9 +8,7 @@ export default class Registration extends Component {
     this.state = {
       username: "",
       email: "",
-      password: "",
-      password_comfirmation: "",
-      registrationErrors: ""
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,22 +20,15 @@ export default class Registration extends Component {
     });
   }
   handleSubmit(event) {
-    const { username, email, password, password_comfirmation } = this.state;
+    const { username, email, password } = this.state;
     console.log("Submitted");
     event.preventDefault();
     axios
-      .post(
-        "https://design-bw.herokuapp.com/api/auth/register",
-        {
-          user: {
-            username: username,
-            email: email,
-            password: password,
-            password_confirmation: password_comfirmation
-          }
-        },
-        { withCredentials: true }
-      )
+      .post("https://design-bw.herokuapp.com/api/auth/register", {
+        username: username,
+        email: email,
+        password: password
+      })
       .then(res => {
         console.log("reg res", res);
       })
@@ -48,7 +39,7 @@ export default class Registration extends Component {
 
   render() {
     return (
-      <>
+      <Container className="registration">
         <form onSubmit={this.handleSubmit}>
           <input
             type="username"
@@ -75,17 +66,10 @@ export default class Registration extends Component {
             onChange={this.handleChange}
             required
           />
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Password Confirmation"
-            value={this.state.password_comfirmation}
-            onChange={this.handleChange}
-            required
-          />
+
           <button type="submit"> Register </button>
         </form>
-      </>
+      </Container>
     );
   }
 }
