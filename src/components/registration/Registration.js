@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Container } from 'shards-react'
+import { Container } from "shards-react";
 export default class Registration extends Component {
   constructor(props) {
     super(props);
@@ -22,36 +22,34 @@ export default class Registration extends Component {
     });
   }
   handleSubmit(event) {
-      const {
-          username,
-          email,
-          password,
-          password_comfirmation
-      } = this.state
+    const { username, email, password, password_comfirmation } = this.state;
     console.log("Submitted");
     event.preventDefault();
-    axios.post('https://design-bw.herokuapp.com/api/auth/register', {
-        user: {
+    axios
+      .post(
+        "https://design-bw.herokuapp.com/api/auth/register",
+        {
+          user: {
             username: username,
             email: email,
             password: password,
             password_confirmation: password_comfirmation
-        }
-    },
-    {withCredentials: true}
-    )
-    .then(res => {
-        console.log("reg res", response)
-    })
-    .catch(err => {
-        console.log("reg error", err)
-    })
+          }
+        },
+        { withCredentials: true }
+      )
+      .then(res => {
+        console.log("reg res", res);
+      })
+      .catch(err => {
+        console.log("reg error", err);
+      });
   }
 
   render() {
     return (
-      <Container>
-           <form onSubmit={this.handleSubmit}>
+      <>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="username"
             name="username"
@@ -60,7 +58,7 @@ export default class Registration extends Component {
             onChange={this.handleChange}
             required
           />
-        <form onSubmit={this.handleSubmit}>
+
           <input
             type="email"
             name="email"
@@ -87,7 +85,7 @@ export default class Registration extends Component {
           />
           <button type="submit"> Register </button>
         </form>
-        </Container>
+      </>
     );
   }
 }
