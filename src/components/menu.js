@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Navbar,
   NavbarToggler,
@@ -57,7 +58,7 @@ export default class Menu extends React.Component {
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink to="/login" active href="login">
+              <NavLink to="/dashboard" active href="dashboard">
                 Dashboard
               </NavLink>
             </NavItem>
@@ -70,9 +71,16 @@ export default class Menu extends React.Component {
                 Hello User!
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>Your Posts</DropdownItem>
+                <DropdownItem>
+                  <Link to="/activity">Your Activity</Link>
+                </DropdownItem>
                 <DropdownItem>Edit Profile</DropdownItem>
-                <DropdownItem>Sign Out</DropdownItem>
+                <DropdownItem>
+                  <Link to="/login">Login/Logout</Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link to="/register">Register</Link>
+                </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </Nav>
