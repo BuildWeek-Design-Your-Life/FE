@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import {
-  Form,
-  FormInput,
-  FormGroup,
   Container,
   Button,
-  Slider,
   ListGroup,
   ListGroupItem
 } from "shards-react";
@@ -33,8 +29,6 @@ export class Confirm extends Component {
           <ListGroupItem>Username: {username}</ListGroupItem>
           <ListGroupItem>Password: {password}</ListGroupItem>
           <ListGroupItem>Email: {email} </ListGroupItem>
-          <ListGroupItem>Activity: {activity}</ListGroupItem>
-          <ListGroupItem>Engagement: {engagement}</ListGroupItem>
         </ListGroup>
         <Button onClick={this.continue}>Confirm and continue</Button>
         <Button theme="secondary" className="back" onClick={this.back}>
