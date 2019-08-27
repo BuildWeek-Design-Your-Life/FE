@@ -74,7 +74,9 @@ export default class Menu extends React.Component {
                 <DropdownItem>
                   <Link to="/activity">Your Activity</Link>
                 </DropdownItem>
-                <DropdownItem>Edit Profile</DropdownItem>
+                <DropdownItem>
+                  <Link to="/activity/create">New Activity</Link>
+                </DropdownItem>
                 <DropdownItem>
                   <Link to="/login">Login/Logout</Link>
                 </DropdownItem>
