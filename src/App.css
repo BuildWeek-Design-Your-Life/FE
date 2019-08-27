@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 .App {
   text-align: center;
+  font-family: "Nunito", sans-serif;
 }
 
 .App-logo {
@@ -30,4 +32,58 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-color: #2c7fb3 !important;
+  color: white !important;
+}
+
+h1 {
+  color: white !important;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Login */
+
+.login-container {
+  margin-top: 40px;
+}
+
+/* Header & Nav */
+
+.bg-primary {
+  background-color: #286a93 !important;
+}
+.navbar {
+  background-color: #286a93;
+}
+
+.nav a {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+.nav a:hover {
+  text-decoration: underline;
+  color: #bdc3c7;
+}
+
+/* Login/Signup */
+
+.login-btn {
+  margin: 0px !important;
+}
+.login-container {
+  text-align: left;
+}
+
+/* footer */
+
+.footer-container {
+  background-color: #286a93;
+  color: white;
+  margin-top: 40px;
+  padding: 20px;
 }

@@ -5,7 +5,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <Container className="footer-container">
-        <Col>FOOTER </Col>
+        <Col>Created by the Desgin Your Life Lambda Team </Col>
       </Container>
     );
   }

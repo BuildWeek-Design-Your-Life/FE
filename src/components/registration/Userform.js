@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "shards-react";
 import FormUserDetails from "./FormUserDetails";
-import FormFirstPost from "./FormFirstPost";
 import Confirm from "./Confirm";
 import Success from "./Success";
 export class Userform extends Component {
@@ -9,9 +8,7 @@ export class Userform extends Component {
     step: 1,
     username: "",
     password: "",
-    email: "",
-    activity: "",
-    engagement: ""
+    email: ""
   };
 
   // Proceed to next step
@@ -39,8 +36,8 @@ export class Userform extends Component {
 
   render() {
     const { step } = this.state;
-    const { username, password, email, activity, engagement } = this.state;
-    const values = { username, password, email, activity, engagement };
+    const { username, password, email } = this.state;
+    const values = { username, password, email };
 
     switch (step) {
       case 1:
@@ -51,16 +48,8 @@ export class Userform extends Component {
             values={values}
           />
         );
+
       case 2:
-        return (
-          <FormFirstPost
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 3:
         return (
           <Confirm
             nextStep={this.nextStep}
@@ -68,7 +57,7 @@ export class Userform extends Component {
             values={values}
           />
         );
-      case 4:
+      case 3:
         return (
           <Success
             nextStep={this.nextStep}
