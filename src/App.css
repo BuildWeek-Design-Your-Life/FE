@@ -87,3 +87,27 @@ h1 {
   margin-top: 40px;
   padding: 20px;
 }
+
+
+/* Activity Card Styles */
+.card-container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.card {
+  margin: 40px 40px 0 0;
+  color: black;
+}
+
+.card-header {
+  font-size: 2em;
+  color: #003366;
+  background: #EFEFEF;
+}
+
+.card-body {
+  background: #8fbc8f;
+  color: #EFEFEF;
+  font-size: 1.5em;
+}
