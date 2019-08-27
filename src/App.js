@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <Registration />
       <Route exact path="/login" component={Login} />
       <ActivitiesList />
       <Footer />
