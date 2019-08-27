@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
+
 import ActivityCard from "./ActivityCard";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
 
-export default function ActivitiesList() {
-  const [activitiesArray, setActivities] = useState([]);
+// import axios from 'axios'
 
+const ActivitiesList = () => {
+  const [activitiesArray, setActivities] = useState([]);
+  console.log(activitiesArray);
   const getActivities = () => {
-    axiosWithAuth()
+    return axiosWithAuth()
       .get("https://design-bw.herokuapp.com/api/activity")
-      .then(response => {
-        console.log(response.data);
-        // const activities = response.data;
-        // setActivities(response);
+      .then(res => {
+        setActivities(res.data);
       })
       .catch(err => {
-        console.log(err.response);
+        console.log("This is bad", err.response);
       });
   };
 
@@ -25,8 +25,12 @@ export default function ActivitiesList() {
 
   return (
     <div className="activities-list grid-view">
-      {/* { activitiesArray.map(activity => <ActivityCard activity={activity} /> ) } */}
-      Hi
+      Thanks GitHub
+      {activitiesArray.map(active => (
+        <ActivityCard key={active.id} {...activitiesArray} active={active} />
+      ))}
     </div>
   );
-}
+};
+
+export default ActivitiesList;
