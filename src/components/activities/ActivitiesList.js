@@ -25,7 +25,6 @@ const ActivitiesList = () => {
 
   return (
     <div className="activities-list grid-view">
-      Thanks GitHub
       {activitiesArray.map(active => (
         <ActivityCard key={active.id} {...activitiesArray} active={active} />
       ))}
