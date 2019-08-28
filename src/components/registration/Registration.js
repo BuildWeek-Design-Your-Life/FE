@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Container } from "shards-react";
+import { Container, Button, Form, FormGroup, FormInput } from "shards-react";
 export default class Registration extends Component {
   constructor(props) {
     super(props);
@@ -40,35 +40,47 @@ export default class Registration extends Component {
   render() {
     return (
       <Container className="registration">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="username"
-            name="username"
-            placeholder="Username"
-            value={this.state.username}
-            onChange={this.handleChange}
-            required
-          />
+        <Form className="registration-form">
+          <FormGroup className="rf-username">
+            <label htmlFor="#username">
+              <h4>Please enter your username.</h4>
+            </label>
+            <FormInput
+              type="username"
+              name="username"
+              placeholder="Username"
+              value={this.state.username}
+              onChange={this.handleChange}
+              required
+            />
+          </FormGroup>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-
-          <button type="submit"> Register </button>
-        </form>
+          <FormGroup className="rf-username">
+            <h4>Please enter your email address.</h4>
+            <FormInput
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup className="rf-username">
+            <h4>Please enter your password.</h4>
+            <FormInput
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              required
+            />
+          </FormGroup>
+          <Button block onClick={this.handleSubmit}>
+            Register
+          </Button>
+        </Form>
       </Container>
     );
   }

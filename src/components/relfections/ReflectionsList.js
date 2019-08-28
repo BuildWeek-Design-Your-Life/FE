@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReflectionCard from "./RelfectionCard";
-import { axiosWithAuth } from "../../Utils/axiosWithAuth";
+import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 const ReflectionsList = () => {
   const [reflectionsArray, setReflections] = useState([]);
