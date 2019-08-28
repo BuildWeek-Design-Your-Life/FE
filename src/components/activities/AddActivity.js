@@ -3,13 +3,12 @@ import {Form, Field, Formik} from 'formik';
 import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 class AddActivity extends Component {
-    state = {
-        newActivity: {
+    state ={
+        newActivity: {...this.state},
             Activity: '',
             Energy: '',
             Engagement: '',
-            users_ref_id: 1
-        }
+            users_ref_id: 0
     }
 
     handleChange = e => {
@@ -29,7 +28,7 @@ class AddActivity extends Component {
                 [e.target.name]: Number(e.target.value)
             }
         })
-        console.log(e.target.value);
+        // console.log(e.target.value);
     }
 
     onSubmit = e => {

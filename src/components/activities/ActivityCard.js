@@ -14,9 +14,10 @@ import {
 import "../../App.css";
 
 export default function ActivityCard(props) {
+
   const deleteActivity = (e) => {
     e.preventDefault();
-    console.log('Delete Movie');
+    console.log('Delete Activity');
     axiosWithAuth() 
     .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
     .then(res => console.log(res.data))
