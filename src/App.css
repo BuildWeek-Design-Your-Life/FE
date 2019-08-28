@@ -39,7 +39,8 @@ body {
   color: white !important;
 }
 
-h1 {
+h1,
+h4 {
   color: white !important;
   font-family: "Nunito", sans-serif;
 }
@@ -101,16 +102,54 @@ h1 {
 .card-header {
   font-size: 2em;
   color: #286a93;
-  background: #EFEFEF;
+  background: #efefef;
 }
 
 .card-body {
   background: #286a93;
-  color: #EFEFEF;
+  color: #efefef;
   font-size: 1.5em;
 }
 
+/* Registration Form */
 .registration {
-  background-color: red;
+  background-color: #286a93;
+  padding: 40px 80px 40px 80px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+.rf-username {
+  margin-bottom: 40px !important;
+}
+/* Activity Update Form */
+.update-form-container {
+  margin-top: 40px;
+}
+.energize-select {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.engage-select {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.activity-form {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.btn-outline-success {
+  border-color: transparent !important;
+}
+.btn-outline-danger {
+  border-color: transparent !important;
+}
+.activity-btns {
+  padding: 10px;
+}
+.btn-outline-success a {
+  color: #2c7fb3;
 }
 
+.btn-outline-success a:hover {
+  color: #2c7fb3;
+}

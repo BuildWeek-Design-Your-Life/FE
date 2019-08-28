@@ -68,13 +68,18 @@ export default class Menu extends React.Component {
               toggle={this.toggleDropdown}
             >
               <DropdownToggle nav caret>
-                Hello User!
+                Hello,
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
                   <Link to="/activity">Your Activity</Link>
                 </DropdownItem>
-                <DropdownItem>Edit Profile</DropdownItem>
+                <DropdownItem>
+                  <Link to="/activity/create">New Activity</Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link to="/reflection">Your Reflections</Link>
+                </DropdownItem>
                 <DropdownItem>
                   <Link to="/login">Login/Logout</Link>
                 </DropdownItem>
