@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import {
   Card,
@@ -54,9 +55,11 @@ export default class Dashboard extends Component {
             <CardHeader>Reflection</CardHeader>
             <CardImg src="https://place-hold.it/300x200" />
             <CardBody>
-              <CardTitle>Lorem Ipsum</CardTitle>
-              <p>Lorem ipsum dolor sit amet.</p>
-              <Button>Read more &rarr;</Button>
+            <Link to={'/add-reflection'}>
+              <Button block outline rounded theme="success">
+                Add Reflection
+              </Button>
+            </Link>
             </CardBody>
             <CardFooter>Thanks for Sharing!</CardFooter>
           </Card>
