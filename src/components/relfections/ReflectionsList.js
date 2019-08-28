@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReflectionCard from "./RelfectionCard";
-import { axiosWithAuth } from "../../Utils/axiosWithAuth";
+import axiosWithAuth from "../../Utils/axiosWithAuth";
 
-const ReflectionsList = () => {
+export default function ReflectionsList (props) {
   const [reflectionsArray, setReflections] = useState([]);
   console.log(reflectionsArray);
   const getReflections = () => {
@@ -32,5 +32,3 @@ const ReflectionsList = () => {
     </div>
   );
 };
-
-export default ReflectionsList;

@@ -9,10 +9,11 @@ import ActivitiesList from "./components/activities/ActivitiesList";
 import ActivityCard from "./components/activities/ActivityCard";
 import Registration from "./components/registration/Registration";
 import Dashboard from "./components/dashboard";
-import Userform from "./components/registration/Userform";
+
 import { Route, Switch } from "react-router-dom";
+import UpdateForm from "./components/activities/UpdateForm";
 import PrivateRoute from "./components/PrivateRoute";
-import ActivitiesPost from "./components/activities/ActivitiesPost";
+
 import ReflectionsList from "./components/relfections/ReflectionsList";
 
 export default class App extends Component {
@@ -22,14 +23,11 @@ export default class App extends Component {
         <Menu />
         <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/activity" component={ActivitiesList} />
-        <Route exact path="/reflection" component={ReflectionsList} />
+        <PrivateRoute exact path="/activity" component={ActivitiesList} />
+        <PrivateRoute exact path="/reflection" component={ReflectionsList} />
         <Route exact path="/register" component={Registration} />
-        <PrivateRoute
-          exact
-          path="/activity/create"
-          component={ActivitiesPost}
-        />
+        <Route path="/update-activity/:id" component={UpdateForm} />
+
         <Footer />
       </div>
     );
