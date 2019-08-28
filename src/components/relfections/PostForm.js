@@ -36,9 +36,9 @@ class AddReflection extends Component {
             <>
             <Formik>
                 <Form className="user-input" onSubmit={this.onSubmit}>
-                    <Field className="user-input-field" type="text" name="Summary" value={this.state.summary} onChange={this.handleChange}/>              
-                    <Field className="user-input-field" type="text" name="Insights" value={this.state.insights} onChange={this.handleChange}/>
-                    <Field className="user-input-field" type="text" name="Trends" value={this.state.trends} onChange={this.handleChange}/>
+                    <Field className="user-input-field" type="text" name="Summary" placeholder="Summary" value={this.state.summary} onChange={this.handleChange}/>              
+                    <Field className="user-input-field" type="text" name="Insights" placeholder="Insights" value={this.state.insights} onChange={this.handleChange}/>
+                    <Field className="user-input-field" type="text" name="Trends" placeholder="Trends" value={this.state.trends} onChange={this.handleChange}/>
                     <button className="user-input-button" type="submit">Submit</button>
                 </Form>  
             </Formik>
