@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 import {
   Col,
@@ -13,20 +14,15 @@ import {
 import "../../App.css";
 
 export default function ActivityCard(props) {
-  // const deleteActivity = props => {
-  //   axiosWithAuth() 
-  //     .delete(`http://localhost:5000/api/colors/${props.id}`)
-  //     .then(response => {
-  //       console.log("Delete successful", response)
-
-  //     })
-  //     .catch(error => {
-  //       console.log("deleteActivity unsuccessful", error)
-  //     })
-  // };
+  const deleteActivity = (e) => {
+    e.preventDefault();
+    console.log('Delete Movie');
+    axiosWithAuth() 
+    .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
+    .then(res => console.log(res.data))
+  }
 
 
-  console.log(props);
   return (
     <Container className="card-container">
       <Card className="card">
@@ -36,7 +32,7 @@ export default function ActivityCard(props) {
           <p>Engagement: {props.active.engagement}</p>
         </CardBody>
         <Row className="activity-btns">
-          <Col md="12">
+          <Col md="6">
             <Link to={`/update-activity/${props.active.id}`}>
               <Button block outline rounded theme="success">
                 Update This Activity
@@ -44,11 +40,11 @@ export default function ActivityCard(props) {
             </Link>
           </Col>
           <Col md="6">
-            {/* <Link className="delete" onClick={() => deleteActivity(color)}>
+            <Link className="delete" onClick={deleteActivity}>
               <Button block outline rounded theme="danger">
                 Delete Here
               </Button>
-            </Link> */}
+            </Link>
           </Col>
         </Row>
       </Card>

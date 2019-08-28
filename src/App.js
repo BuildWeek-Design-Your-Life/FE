@@ -18,6 +18,7 @@ import ReflectionsList from "./components/relfections/ReflectionsList";
 import AddReflection from "./components/relfections/PostForm";
 
 export default class App extends Component {
+
   render() {
     return (
       <div className="App">

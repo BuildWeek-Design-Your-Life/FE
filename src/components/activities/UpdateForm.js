@@ -10,6 +10,8 @@ import {
   FormTextarea,
   FormGroup
 } from "shards-react";
+
+
 const UpdateForm = props => {
   console.log(props);
   const [newActivity, setNewActivity] = useState({
