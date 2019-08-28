@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import ActivityCard from "./ActivityCard";
 import { axiosWithAuth } from "../../Utils/axiosWithAuth";
 
-// import axios from 'axios'
-
 const ActivitiesList = (props) => {
+
   const [activitiesArray, setActivities] = useState([]);
   console.log(activitiesArray);
   const getActivities = () => {
@@ -25,7 +24,7 @@ const ActivitiesList = (props) => {
   }, []);
 
   return (
-    <div className="activities-list grid-view">
+    <div className="activities-list">
       {activitiesArray.map(active => (
         <ActivityCard key={active.id} {...activitiesArray} active={active} />
       ))}
