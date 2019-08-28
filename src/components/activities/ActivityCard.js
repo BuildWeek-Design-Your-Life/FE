@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 import {
   Col,
@@ -13,7 +14,15 @@ import {
 import "../../App.css";
 
 export default function ActivityCard(props) {
-  console.log(props);
+  const deleteActivity = (e) => {
+    e.preventDefault();
+    console.log('Delete Movie');
+    axiosWithAuth() 
+    .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
+    .then(res => console.log(res.data))
+  }
+
+
   return (
     <Container className="card-container">
       <Card className="card">
@@ -31,7 +40,7 @@ export default function ActivityCard(props) {
             </Link>
           </Col>
           <Col md="6">
-            <Link to={`/update-activity/${props.active.id}`}>
+            <Link className="delete" onClick={deleteActivity}>
               <Button block outline rounded theme="danger">
                 Delete Here
               </Button>

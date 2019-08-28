@@ -17,6 +17,12 @@ export default function Dashboard () {
         <Button block outline rounded theme="success">
           Add Activity
         </Button>
+        <Link to={'/add-reflection'}>
+              <Button block outline rounded theme="success">
+                Add Reflection
+              </Button>
+            </Link>
       </Link>
     </>
   )
+}

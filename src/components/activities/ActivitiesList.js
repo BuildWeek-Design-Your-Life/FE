@@ -3,6 +3,7 @@ import ActivityCard from "./ActivityCard";
 import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 const ActivitiesList = props => {
+  console.log(props)
   const [activitiesArray, setActivities] = useState([]);
   console.log(activitiesArray);
   const getActivities = () => {

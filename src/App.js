@@ -15,7 +15,14 @@ import { Route, Switch } from "react-router-dom";
 import UpdateForm from "./components/activities/UpdateForm";
 import PrivateRoute from "./components/PrivateRoute";
 
+<<<<<<< HEAD
+import ReflectionsList from "./components/relfections/ReflectionsList";
+import AddReflection from "./components/relfections/PostForm";
+
+=======
+>>>>>>> d9af27f18469f6d02d33eafcd147874df2459bd6
 export default class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -26,7 +33,11 @@ export default class App extends Component {
         <PrivateRoute exact path="/reflection" component={ReflectionsList} />
         <Route exact path="/register" component={Registration} />
         <Route path="/update-activity/:id" component={UpdateForm} />
+<<<<<<< HEAD
+        <PrivateRoute exact path='/add-reflection' component={AddReflection} />
+=======
         <PrivateRoute exact path='/add-activity' component={AddActivity} />
+>>>>>>> d9af27f18469f6d02d33eafcd147874df2459bd6
         <Footer />
       </div>
     );
