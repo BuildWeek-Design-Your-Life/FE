@@ -1,47 +1,22 @@
-import React, { Component } from "react";
+import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
+import {Button} from "shards-react";
 import axios from "axios";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardImg,
-  CardBody,
-  CardFooter,
-  Button,
-  Container
-} from "shards-react";
-import Menu from "../components/menu";
-import "../index.css";
-import shards from "shards-react";
-import ActivityCard from "./activities/ActivityCard";
-import ReflectionCard from "./relfections/RelfectionCard";
 
-export default class Dashboard extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     activity: []
-  //   };
-  // }
+import ActivitiesList from "./activities/ActivitiesList";
+import ReflectionsList from "./relfections/ReflectionsList";
 
-  // componentDidMount() {
-  //   axios
-  //     .get("https://design-bw.herokuapp.com/api/activity")
+export default function Dashboard () {
+  const [inputs, setInputs] = useState([]);
 
-  //     .then(response => {
-  //       console.log(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.log("Error fetching and parsing data", error);
-  //     });
-  // }
-
-  // render() {
-    return (
-        <ActivityCard></ActivityCard>
-        <ReflectionCard></ReflectionCard>
-    
-    
-    );
-  }
-}
+  return (
+    <>
+      <ActivitiesList />
+      <ReflectionsList />
+      <Link to={'/add-activity'}>
+        <Button block outline rounded theme="success">
+          Add Activity
+        </Button>
+      </Link>
+    </>
+  )

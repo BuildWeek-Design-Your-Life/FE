@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, CardHeader, CardBody, Container } from "shards-react";
+import { Card, CardBody, Container } from "shards-react";
 
 import "../../App.css";
 
