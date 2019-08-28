@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, Button, Form, FormGroup, FormInput } from "shards-react";
 export default class Registration extends Component {
   constructor(props) {
+    console.log(props)
     super(props);
 
     this.state = {
@@ -16,11 +17,11 @@ export default class Registration extends Component {
   handleChange(event) {
     console.log("handle change", event);
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
   handleSubmit(event) {
-    const { username, email, password} = this.state;
+    const { username, email, password } = this.state;
     console.log("Submitted", this.state);
     event.preventDefault();
     axios
@@ -28,6 +29,7 @@ export default class Registration extends Component {
         username: username,
         email: email,
         password: password,
+
       })
       .then(res => {
         console.log("reg res", res.data);
@@ -38,6 +40,7 @@ export default class Registration extends Component {
   }
 
   render() {
+    console.log('this is state', this.state)
     return (
       <Container className="registration">
         <Form className="registration-form">

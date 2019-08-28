@@ -4,11 +4,12 @@ import axiosWithAuth from "../../Utils/axiosWithAuth";
 
 class AddActivity extends Component {
     state ={
-        newActivity: {...this.state},
+        newActivity:{
             Activity: '',
             Energy: '',
             Engagement: '',
-            users_ref_id: 0
+            users_act_id: 1
+        }
     }
 
     handleChange = e => {
@@ -18,7 +19,7 @@ class AddActivity extends Component {
                 [e.target.name]: e.target.value
             }
         })
-        console.log(e.target.value);
+        // console.log(e.target.value);
     }
 
     handleNum = e => {
@@ -45,9 +46,9 @@ class AddActivity extends Component {
             <>
             <Formik>
                 <Form onSubmit={this.onSubmit}>
-                    <Field type="text" name="Activity" value={this.state.activity} onChange={this.handleChange}/>              
-                    <Field type="number" name="Energy" value={this.state.energize} onChange={this.handleNum}/>
-                    <Field type="number" name="Engagement" value={this.state.engagement} onChange={this.handleNum}/>
+                    <Field type="text" name="Activity" value={this.state.Activity} onChange={this.handleChange}/>              
+                    <Field type="number" name="Energy" value={this.state.Energize} onChange={this.handleNum}/>
+                    <Field type="number" name="Engagement" value={this.state.Engagement} onChange={this.handleNum}/>
                     <button type="submit">Submit</button>
                 </Form>  
             </Formik>
