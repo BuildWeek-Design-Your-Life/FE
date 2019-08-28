@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from 'react'
 import "./App.css";
-import axios from "axios";
+import axios from 'axios';
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Login from "./components/login";
@@ -11,6 +11,7 @@ import Registration from "./components/registration/Registration";
 import Dashboard from "./components/dashboard";
 import Userform from "./components/registration/Userform";
 import { Route, Switch } from "react-router-dom";
+import UpdateForm from './components/activities/UpdateForm'
 import PrivateRoute from "./components/PrivateRoute";
 import ActivitiesPost from "./components/activities/ActivitiesPost";
 import ReflectionsList from "./components/relfections/ReflectionsList";
@@ -25,6 +26,8 @@ export default class App extends Component {
         <Route exact path="/activity" component={ActivitiesList} />
         <Route exact path="/reflection" component={ReflectionsList} />
         <Route exact path="/register" component={Registration} />
+         <Route path="/update-activity/:id" component={UpdateForm}/>
+
         <PrivateRoute
           exact
           path="/activity/create"
