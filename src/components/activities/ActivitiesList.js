@@ -5,13 +5,14 @@ import { axiosWithAuth } from "../../Utils/axiosWithAuth";
 
 // import axios from 'axios'
 
-const ActivitiesList = () => {
+const ActivitiesList = (props) => {
   const [activitiesArray, setActivities] = useState([]);
   console.log(activitiesArray);
   const getActivities = () => {
     return axiosWithAuth()
-      .get("https://design-bw.herokuapp.com/api/activity")
+      .get(`https://design-bw.herokuapp.com/api/activity`)
       .then(res => {
+        console.log('list req', res.data)
         setActivities(res.data);
       })
       .catch(err => {

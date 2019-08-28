@@ -30,7 +30,7 @@ export default class Registration extends Component {
         password: password
       })
       .then(res => {
-        console.log("reg res", res);
+        console.log("reg res", res.data);
       })
       .catch(err => {
         console.log("reg error", err);
