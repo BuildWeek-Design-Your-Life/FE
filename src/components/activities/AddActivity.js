@@ -2,29 +2,31 @@ import React, { useState } from 'react';
 import {Form, Field, Formik} from 'formik';
 import axiosWithAuth from "../../Utils/axiosWithAuth";
 
-export default function AddActivity (props) {
+export default function AddActivity () {
 
-    const [activity, setActivity] = useState({ Activity: "", Energy: 0, Engagement: 0, ID: ""});
+    const [activity, setActivity] = useState({});
 
     const handleChange = e => {
-        setActivity({activity, [e.target.name]: e.target.value });
+        setActivity({...activity, [e.target.name]: e.target.value });
     };
 
     const submitForm = e => {
+        e.preventDefault();
         axiosWithAuth()
-            .post(`https://design-bw.herokuapp.com/api/activity/`, this.state.activity)
+        // Post requests require two arguments = URL + state
+            .post(`https://design-bw.herokuapp.com/api/activity/`, activity)
             .then(res => {console.log(res)})
             .catch(err => {console.log(err.message)})
-            // console.log(res)
     }
 
     return (
         <>
         <Formik>
             <Form onSubmit={submitForm}>
-                <Field type="text" name="Activity" onChange={handleChange}/>              
-                <Field type="number" name="Energy" onChange={handleChange}/>
-                <Field type="number" name="Engagement" onChange={handleChange}/>
+                <Field type="number" name="users_act_id" placeholder="User ID" onChange={handleChange} />
+                <Field type="text" name="activity" placeholder="Activity" onChange={handleChange}/>              
+                <Field type="number" name="energize" placeholder="How energized?" onChange={handleChange}/>
+                <Field type="number" name="engagement" placeholder="How engaged?" onChange={handleChange}/>
                  <button type="submit">Submit</button>
             </Form>  
         </Formik>
