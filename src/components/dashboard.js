@@ -6,7 +6,7 @@ import { Card,
   CardImg,
   CardBody,
   CardFooter,
-  Buttoner, 
+  Button, 
   Container } from "shards-react";
 import Menu from "../components/menu";
 import "../index.css";
