@@ -173,3 +173,17 @@ h4 {
   color: #286a93;
   background: palegoldenrod; 
 }
+
+.add-activity, .add-reflection {
+  width: 81vw;
+  font-size: 2em;
+  background: #286a93;
+  color: white;
+  margin-top: 40px;
+  transition: 0.6s; 
+}
+
+.add-activity:hover, .add-reflection:hover {
+  color: #286a93;
+  background: palegoldenrod; 
+}
