@@ -19,7 +19,6 @@ import { axiosWithAuth } from "./Utils/axiosWithAuth";
 
 const App = ()=>  {
   const [activity, setActivity] = useState([])
-  console.log(activity)
 
   const updateActivity = updatedActivity => {
     setActivity(activity.map(activity => (
@@ -47,8 +46,6 @@ const App = ()=>  {
       <Route exact path="/activity" component={ActivitiesList} />
       <Route exact path="/register" component={Registration} />
       <Route path="/update-activity/:id" component={UpdateForm}/>
-
-
       <Footer />
     </div>
   );
