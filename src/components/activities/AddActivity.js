@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { Form, Field, Formik } from "formik";
 import axiosWithAuth from "../../Utils/axiosWithAuth";
-
-export default function AddActivity() {
-  const [activity, setActivity] = useState({});
-
-  const handleChange = e => {
-    setActivity({ ...activity, [e.target.name]: e.target.value });
+const id = localStorage.getItem("id");
+class AddActivity extends Component {
+  state = {
+    newActivity: {
+      activity: "",
+      energize: "",
+      engagement: "",
+      users_act_id: `${id}`
+    }
   };
-  const id = localStorage.getItem("id");
-  const submitForm = e => {
+
+  handleChange = e => {
+    this.setState({
+      newActivity: {
+        ...this.state.newActivity,
+        [e.target.name]: e.target.value
+      }
+    });
+    // console.log('onchange',this.state)
+  };
+
+  onSubmit = e => {
     e.preventDefault();
+    console.log(this.state.newActivity);
     axiosWithAuth()
-      // Post requests require two arguments = URL + state
-      .post(`https://design-bw.herokuapp.com/api/activity/`, activity)
+      .post(
+        `https://design-bw.herokuapp.com/api/activity`,
+        this.state.newActivity
+      )
       .then(res => {
         console.log(res);
       })
@@ -22,43 +38,50 @@ export default function AddActivity() {
       });
   };
 
-  return (
-    <>
-      <Formik>
-        <Form onSubmit={submitForm}>
-          <Field
-            className="user-input-field"
-            type="number"
-            name="users_act_id"
-            placeholder={id}
-            onChange={handleChange}
-          />
-          <Field
-            className="user-input-field"
-            type="text"
-            name="activity"
-            placeholder="Activity"
-            onChange={handleChange}
-          />
-          <Field
-            className="user-input-field"
-            type="number"
-            name="energize"
-            placeholder="How energized?"
-            onChange={handleChange}
-          />
-          <Field
-            className="user-input-field"
-            type="number"
-            name="engagement"
-            placeholder="How engaged?"
-            onChange={handleChange}
-          />
-          <button className="user-input-button" type="submit">
-            Submit
-          </button>
-        </Form>
-      </Formik>
-    </>
-  );
+  render() {
+    return (
+      <>
+        <Formik>
+          <Form className="user-input" onSubmit={this.onSubmit}>
+            {/* <Field
+              className="user-input-field"
+              type="text"
+              name="id"
+              placeholder={id}
+              value={id}
+              onChange={this.handleChange}
+            /> */}
+            <Field
+              className="user-input-field"
+              type="text"
+              name="activity"
+              placeholder="activity"
+              value={this.state.activity}
+              onChange={this.handleChange}
+            />
+            <Field
+              className="user-input-field"
+              type="text"
+              name="energize"
+              placeholder="energize"
+              value={this.state.energize}
+              onChange={this.handleChange}
+            />
+            <Field
+              className="user-input-field"
+              type="text"
+              name="engagement"
+              placeholder="engagement"
+              value={this.state.engagement}
+              onChange={this.handleChange}
+            />
+            <button className="user-input-button" type="submit">
+              Submit
+            </button>
+          </Form>
+        </Formik>
+      </>
+    );
+  }
 }
+export default AddActivity;
