@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [inputs, setInputs] = useState([]);
 
   return (
-    <>
+    <Container className="dashboard">
       <ActivitiesList />
       <ReflectionsList />
       <Container className="dashboard-buttons">
@@ -36,6 +36,6 @@ export default function Dashboard() {
           </Col>
         </Row>
       </Container>
-    </>
+    </Container>
   );
 }
