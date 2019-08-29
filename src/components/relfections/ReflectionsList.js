@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+
+// Components
 import ReflectionCard from "./RelfectionCard";
-import axiosWithAuth from "../../Utils/axiosWithAuth";
 
-export default function ReflectionsList (props) {
-  const [reflectionsArray, setReflections] = useState([]);
-  console.log(reflectionsArray);
-  const getReflections = () => {
-    return axiosWithAuth()
-      .get("https://design-bw.herokuapp.com/api/reflect")
-      .then(res => {
-        setReflections(res.data);
-      })
-      .catch(err => {
-        console.log("This is bad", err.response);
-      });
-  };
+// Context
+import { ReflectionContext } from "../../context/ReflectionContext";
 
-  useEffect(() => {
-    getReflections();
-  }, []);
+const ReflectionsList = () => {
+  // destructured object
+  const { reflectionsArray } = useContext(ReflectionContext);
 
   return (
     <div className="reflections-list">
@@ -32,3 +22,5 @@ export default function ReflectionsList (props) {
     </div>
   );
 };
+
+export default ReflectionsList;
