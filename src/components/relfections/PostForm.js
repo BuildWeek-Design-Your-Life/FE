@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Field, Formik } from "formik";
+import { Redirect } from "react-router";
 import axiosWithAuth from "../../Utils/axiosWithAuth";
 const id = localStorage.getItem("id");
 class AddReflection extends Component {
@@ -23,6 +24,7 @@ class AddReflection extends Component {
   };
 
   onSubmit = e => {
+    this.setState({ fireRedirect: true });
     e.preventDefault();
     console.log(this.state.newReflection);
     axiosWithAuth()
@@ -31,6 +33,9 @@ class AddReflection extends Component {
         this.state.newReflection
       )
       .then(res => {
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
         console.log(res);
       })
       .catch(err => {
@@ -39,6 +44,8 @@ class AddReflection extends Component {
   };
 
   render() {
+    const { from } = this.props.location.state || "/add-reflection";
+    const { fireRedirect } = this.state;
     return (
       <>
         <Formik>
@@ -75,9 +82,14 @@ class AddReflection extends Component {
               value={this.state.trends}
               onChange={this.handleChange}
             />
-            <button className="user-input-button" type="submit">
+            <button
+              onSubmit={this.onSubmit}
+              className="user-input-button"
+              type="submit"
+            >
               Submit
             </button>
+            {fireRedirect && <Redirect to={from || "/dashboard"} />}
           </Form>
         </Formik>
       </>

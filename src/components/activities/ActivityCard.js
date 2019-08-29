@@ -15,10 +15,16 @@ import {
 export default function ActivityCard(props) {
   const deleteActivity = e => {
     e.preventDefault();
+
     console.log("Delete Activity");
     axiosWithAuth()
       .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
-      .then(res => console.log(res.data));
+      .then(res => {
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
+        console.log(res);
+      });
   };
 
   return (

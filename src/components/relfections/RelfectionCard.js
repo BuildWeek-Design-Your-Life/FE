@@ -10,7 +10,12 @@ export default function ReflectionCard(props) {
     console.log("Delete Reflection");
     axiosWithAuth()
       .delete(`https://design-bw.herokuapp.com/api/reflect/${props.reflect.id}`)
-      .then(res => console.log(res.data));
+      .then(res => {
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
+        console.log(res);
+      });
   };
 
   return (
