@@ -9,7 +9,7 @@ import {
   Col
 } from "shards-react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 const Login = ({ history }) => {
   const [creds, setCreds] = useState({ username: "", password: "" });
 
@@ -24,11 +24,12 @@ const Login = ({ history }) => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("id", res.data.id);
         history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
-  
+
   return (
     <Container className="login-container">
       <Row>
@@ -78,9 +79,11 @@ const Login = ({ history }) => {
 
             <Row className="login-btn">
               Need an account?
-              <Button block squared theme="secondary">
-                Sign Up
-              </Button>
+              <Link to="/register">
+                <Button block squared theme="secondary">
+                  Sign Up
+                </Button>
+              </Link>
             </Row>
           </Form>
         </Col>

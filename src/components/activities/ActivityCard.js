@@ -11,18 +11,15 @@ import {
   Button,
   Row
 } from "shards-react";
-import "../../App.css";
 
 export default function ActivityCard(props) {
-
-  const deleteActivity = (e) => {
+  const deleteActivity = e => {
     e.preventDefault();
-    console.log('Delete Activity');
-    axiosWithAuth() 
-    .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
-    .then(res => console.log(res.data))
-  }
-
+    console.log("Delete Activity");
+    axiosWithAuth()
+      .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
+      .then(res => console.log(res.data));
+  };
 
   return (
     <Container className="card-container">
