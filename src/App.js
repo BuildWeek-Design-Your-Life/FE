@@ -9,7 +9,6 @@ import { ReflectionContext } from "./context/ReflectionContext";
 import PrivateRoute from "./components/PrivateRoute";
 
 // Components
-
 import Footer from "./components/footer";
 import Login from "./components/login";
 import Menu from "./components/menu";
@@ -66,8 +65,8 @@ function App() {
       <ActivityContext.Provider value={{ activitiesArray }}>
         <div className="App">
           <Menu />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Login />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/activity" component={ActivitiesList} />
           <PrivateRoute exact path="/reflection" component={ReflectionsList} />
           <Route exact path="/register" component={Registration} />

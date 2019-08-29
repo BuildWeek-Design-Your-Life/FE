@@ -58,9 +58,9 @@ export default class Menu extends React.Component {
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink to="/dashboard" active href="dashboard">
+              <Link to="/dashboard" active href="dashboard">
                 Dashboard
-              </NavLink>
+              </Link>
             </NavItem>
 
             <Dropdown
