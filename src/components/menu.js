@@ -59,7 +59,7 @@ export default class Menu extends React.Component {
           <Nav navbar>
             <NavItem>
               <Link to="/dashboard" active href="dashboard">
-                Dashboard
+                <NavLink>Dashboard</NavLink>
               </Link>
             </NavItem>
 

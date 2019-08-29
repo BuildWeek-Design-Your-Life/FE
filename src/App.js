@@ -20,7 +20,7 @@ import Dashboard from "./components/dashboard";
 import AddActivity from "./components/activities/AddActivity";
 import UpdateForm from "./components/activities/UpdateForm";
 import AddReflection from "./components/relfections/PostForm";
-
+import Home from "./components/Home";
 function App() {
   const [activitiesArray, setActivities] = useState([]);
   const id = localStorage.getItem("id");
@@ -65,7 +65,8 @@ function App() {
       <ActivityContext.Provider value={{ activitiesArray }}>
         <div className="App">
           <Menu />
-          <Login />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/activity" component={ActivitiesList} />
           <PrivateRoute exact path="/reflection" component={ReflectionsList} />
