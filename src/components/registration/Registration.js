@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Button, Form, FormGroup, FormInput } from "shards-react";
 export default class Registration extends Component {
@@ -82,9 +83,11 @@ export default class Registration extends Component {
               required
             />
           </FormGroup>
-          <Button block onClick={this.handleSubmit}>
-            Register
-          </Button>
+          <Link to="/login">
+            <Button block onClick={this.handleSubmit}>
+              Register
+            </Button>
+          </Link>
         </Form>
       </Container>
     );
