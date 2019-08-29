@@ -68,7 +68,7 @@ export default class Menu extends React.Component {
               toggle={this.toggleDropdown}
             >
               <DropdownToggle nav caret>
-                Hello,
+                Hello
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
