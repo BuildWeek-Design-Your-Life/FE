@@ -35,7 +35,12 @@ export default class Registration extends Component {
         console.log("reg res", res.data);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("id", res.data.id);
+<<<<<<< HEAD
         this.props.history.push("/login");
+=======
+        this.props.history.push("/");
+
+>>>>>>> eb87d72e92563aaed45ddd57d49d3dff9791f0a4
       })
       .catch(err => {
         console.log("reg error", err);
