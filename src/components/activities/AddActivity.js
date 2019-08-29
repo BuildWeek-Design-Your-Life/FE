@@ -14,7 +14,7 @@ export default function AddActivity () {
         e.preventDefault();
         axiosWithAuth()
         // Post requests require two arguments = URL + state
-            .post(`https://design-bw.herokuapp.com/api/activity/`, activity)
+            .post(`https://design-bw.herokuapp.com/api/activity`, activity)
             .then(res => {console.log(res)})
             .catch(err => {console.log(err.message)})
     }
