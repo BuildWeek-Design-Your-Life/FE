@@ -9,7 +9,7 @@ import { ReflectionContext } from "./context/ReflectionContext";
 import PrivateRoute from "./components/PrivateRoute";
 
 // Components
-import Header from "./components/header";
+
 import Footer from "./components/footer";
 import Login from "./components/login";
 import Menu from "./components/menu";

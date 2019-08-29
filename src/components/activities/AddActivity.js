@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Form, Field, Formik } from "formik";
 import axiosWithAuth from "../../Utils/axiosWithAuth";
-
+const id = localStorage.getItem("id");
 class AddActivity extends Component {
   state = {
     newActivity: {
-      users_ref_id: 1,
       activity: "",
       energize: "",
-      engagement: ""
+      engagement: "",
+      users_act_id: `${id}`
     }
   };
 
@@ -43,6 +43,14 @@ class AddActivity extends Component {
       <>
         <Formik>
           <Form className="user-input" onSubmit={this.onSubmit}>
+            {/* <Field
+              className="user-input-field"
+              type="text"
+              name="id"
+              placeholder={id}
+              value={id}
+              onChange={this.handleChange}
+            /> */}
             <Field
               className="user-input-field"
               type="text"
