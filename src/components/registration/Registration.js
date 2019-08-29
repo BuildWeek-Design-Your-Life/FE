@@ -3,13 +3,13 @@ import axios from "axios";
 import { Container, Button, Form, FormGroup, FormInput } from "shards-react";
 export default class Registration extends Component {
   constructor(props) {
-    console.log(props)
+    console.log(props);
     super(props);
 
     this.state = {
       username: "",
       email: "",
-      password: "",
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,7 +17,7 @@ export default class Registration extends Component {
   handleChange(event) {
     console.log("handle change", event);
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
   handleSubmit(event) {
@@ -28,8 +28,7 @@ export default class Registration extends Component {
       .post("https://design-bw.herokuapp.com/api/auth/register", {
         username: username,
         email: email,
-        password: password,
-
+        password: password
       })
       .then(res => {
         console.log("reg res", res.data.token);
@@ -43,7 +42,7 @@ export default class Registration extends Component {
   }
 
   render() {
-    console.log('this is state', this.state)
+    console.log("this is state", this.state);
     return (
       <Container className="registration">
         <Form className="registration-form">

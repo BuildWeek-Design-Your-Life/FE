@@ -24,11 +24,12 @@ const Login = ({ history }) => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("id", res.data.id);
         history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
-  
+
   return (
     <Container className="login-container">
       <Row>

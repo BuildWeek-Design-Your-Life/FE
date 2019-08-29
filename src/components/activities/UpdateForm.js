@@ -11,7 +11,6 @@ import {
   FormGroup
 } from "shards-react";
 
-
 const UpdateForm = props => {
   console.log(props);
   const [newActivity, setNewActivity] = useState({
@@ -76,7 +75,7 @@ const UpdateForm = props => {
           <option value="10">10</option>
         </FormSelect>
         <label htmlFor="#username">
-          <h1>How Engaged Were You?</h1>
+          <h1>How Engaged Are You?</h1>
         </label>
         <FormSelect
           className="engage-select"
