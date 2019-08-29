@@ -27,30 +27,36 @@ export default function AddActivity() {
       <Formik>
         <Form onSubmit={submitForm}>
           <Field
+            className="user-input-field"
             type="number"
             name="users_act_id"
             placeholder={id}
             onChange={handleChange}
           />
           <Field
+            className="user-input-field"
             type="text"
             name="activity"
             placeholder="Activity"
             onChange={handleChange}
           />
           <Field
+            className="user-input-field"
             type="number"
             name="energize"
             placeholder="How energized?"
             onChange={handleChange}
           />
           <Field
+            className="user-input-field"
             type="number"
             name="engagement"
             placeholder="How engaged?"
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button className="user-input-button" type="submit">
+            Submit
+          </button>
         </Form>
       </Formik>
     </>
