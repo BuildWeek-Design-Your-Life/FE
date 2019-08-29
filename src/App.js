@@ -18,7 +18,7 @@ import ReflectionsList from "./components/relfections/ReflectionsList";
 import ReflectionUpdateForm from "./components/relfections/ReflectionUpdateForm";
 import Registration from "./components/registration/Registration";
 import Dashboard from "./components/dashboard";
-import AddActivity from "./components/activities/AddActivity";
+import AddActivityClass from "./components/activities/AddActivityClass";
 import UpdateForm from "./components/activities/UpdateForm";
 import AddReflection from "./components/relfections/PostForm";
 
@@ -81,7 +81,11 @@ function App() {
             path="/add-reflection"
             component={AddReflection}
           />
-          <PrivateRoute exact path="/add-activity" component={AddActivity} />
+          <PrivateRoute
+            exact
+            path="/add-activity"
+            component={AddActivityClass}
+          />
           <Footer />
         </div>
       </ActivityContext.Provider>
