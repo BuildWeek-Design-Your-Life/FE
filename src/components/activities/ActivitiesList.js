@@ -9,9 +9,9 @@ import { ActivityContext } from "../../context/ActivityContext";
 const Activity = () => {
   // destructured object
   const { activitiesArray } = useContext(ActivityContext);
-
   return (
     <div className="activities-list">
+      {console.log('hello')}
       {activitiesArray.map(active => (
         <ActivityCard key={active.id} {...activitiesArray} active={active} />
       ))}

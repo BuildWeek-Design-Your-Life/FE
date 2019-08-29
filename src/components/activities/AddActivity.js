@@ -32,6 +32,7 @@ class AddActivity extends Component {
       )
       .then(res => {
         console.log(res);
+        setTimeout(function(){window.location.reload();},10)
       })
       .catch(err => {
         console.log(err.message);

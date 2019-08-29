@@ -20,7 +20,7 @@ export default function ActivityCard(props) {
       .delete(`https://design-bw.herokuapp.com/api/activity/${props.active.id}`)
       .then(res => console.log(res.data));
   };
-
+  {
   return (
     <Container className="card-container">
       <Card className="card">
@@ -48,4 +48,5 @@ export default function ActivityCard(props) {
       </Card>
     </Container>
   );
+}
 }
