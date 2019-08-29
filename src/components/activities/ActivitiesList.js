@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+
+// Components
 import ActivityCard from "./ActivityCard";
-import axiosWithAuth from "../../Utils/axiosWithAuth";
 
-const ActivitiesList = props => {
-  console.log(props)
-  const [activitiesArray, setActivities] = useState([]);
-  console.log(activitiesArray);
-  const getActivities = () => {
-    return axiosWithAuth()
-      .get(`https://design-bw.herokuapp.com/api/activity`)
-      .then(res => {
-        console.log("list req", res.data);
-        setActivities(res.data);
-      })
-      .catch(err => {
-        console.log("This is bad", err.response);
-      });
-  };
+// Context
+import { ActivityContext } from "../../context/ActivityContext";
 
-  useEffect(() => {
-    getActivities();
-  }, []);
+const Activity = () => {
+  // destructured object
+  const { activitiesArray } = useContext(ActivityContext);
 
   return (
     <div className="activities-list">
@@ -31,4 +19,4 @@ const ActivitiesList = props => {
   );
 };
 
-export default ActivitiesList;
+export default Activity;
