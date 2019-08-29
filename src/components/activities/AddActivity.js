@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Form, Field, Formik } from "formik";
+import { Button } from "shards-react";
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 import axiosWithAuth from "../../Utils/axiosWithAuth";
 const id = localStorage.getItem("id");
 class AddActivity extends Component {
@@ -24,6 +27,7 @@ class AddActivity extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    this.setState({ fireRedirect: true });
     console.log(this.state.newActivity);
     axiosWithAuth()
       .post(
@@ -31,6 +35,9 @@ class AddActivity extends Component {
         this.state.newActivity
       )
       .then(res => {
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
         console.log(res);
         setTimeout(function(){window.location.reload();},10)
       })
@@ -40,6 +47,9 @@ class AddActivity extends Component {
   };
 
   render() {
+    const { from } = this.props.location.state || "/add-activity";
+    const { fireRedirect } = this.state;
+
     return (
       <>
         <Formik>
@@ -76,9 +86,15 @@ class AddActivity extends Component {
               value={this.state.engagement}
               onChange={this.handleChange}
             />
-            <button className="user-input-button" type="submit">
+
+            <Button
+              onSubmit={this.onSubmit}
+              className="user-input-button"
+              type="submit"
+            >
               Submit
-            </button>
+            </Button>
+            {fireRedirect && <Redirect to={from || "/dashboard"} />}
           </Form>
         </Formik>
       </>

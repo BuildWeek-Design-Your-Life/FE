@@ -173,3 +173,8 @@ h4 {
   color: #286a93;
   background: palegoldenrod;
 }
+
+/* Dashboard */
+.dashboard-buttons {
+  margin-top: 40px;
+}

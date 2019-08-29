@@ -78,12 +78,9 @@ const Login = ({ history }) => {
             </Row>
 
             <Row className="login-btn">
-              Need an account?
-              <Link to="/register">
-                <Button block squared theme="secondary">
-                  Sign Up
-                </Button>
-              </Link>
+              <Button tag={Link} to="/register" block squared theme="secondary">
+                Sign Up
+              </Button>
             </Row>
           </Form>
         </Col>

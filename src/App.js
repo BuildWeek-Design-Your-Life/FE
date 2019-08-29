@@ -65,23 +65,28 @@ function App() {
       <ActivityContext.Provider value={{ activitiesArray }}>
         <div className="App">
           <Menu />
-
-          <Route exact path="/login" component={Login} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/activity" component={ActivitiesList} />
-          <PrivateRoute exact path="/reflection" component={ReflectionsList} />
-          <Route exact path="/register" component={Registration} />
-          <Route path="/update-activity/:id" component={UpdateForm} />
-          <Route
-            path="/update-reflection/:id"
-            component={ReflectionUpdateForm}
-          />
-          <PrivateRoute
-            exact
-            path="/add-reflection"
-            component={AddReflection}
-          />
-          <PrivateRoute exact path="/add-activity" component={AddActivity} />
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/activity" component={ActivitiesList} />
+            <PrivateRoute
+              exact
+              path="/reflection"
+              component={ReflectionsList}
+            />
+            <Route exact path="/register" component={Registration} />
+            <Route path="/update-activity/:id" component={UpdateForm} />
+            <Route
+              path="/update-reflection/:id"
+              component={ReflectionUpdateForm}
+            />
+            <PrivateRoute
+              exact
+              path="/add-reflection"
+              component={AddReflection}
+            />
+            <PrivateRoute exact path="/add-activity" component={AddActivity} />
+          </Switch>
           <Footer />
         </div>
       </ActivityContext.Provider>
