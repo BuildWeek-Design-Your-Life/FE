@@ -10,15 +10,17 @@ import {
   FormTextarea,
   FormGroup
 } from "shards-react";
+import { Redirect } from "react-router";
 
 const UpdateForm = props => {
-  console.log(props);
+  console.log("this is props from Update Form", props);
   const [newActivity, setNewActivity] = useState({
     activity: "",
     engagement: "",
     energize: ""
   });
-
+  const { from } = props.location.state || "/add-activity";
+  const { fireRedirect } = newActivity;
   const handleChange = e =>
     setNewActivity({ ...newActivity, [e.target.name]: e.target.value });
 
@@ -30,15 +32,18 @@ const UpdateForm = props => {
         newActivity
       )
       .then(res => {
-        console.log("put req", res);
-        props.history.push("/");
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
+        console.log(res);
+        props.history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
 
   return (
     <Container className="update-form-container">
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <label htmlFor="#username">
             <h1>Update Activity</h1>
@@ -97,9 +102,10 @@ const UpdateForm = props => {
           <option value="10">10</option>
         </FormSelect>
 
-        <Button block squared onClick={handleSubmit}>
+        <Button block squared onSubmit={handleSubmit}>
           Update Form
         </Button>
+        {fireRedirect && <Redirect to={from} to={"/dashboard"} />}
       </Form>
     </Container>
   );
