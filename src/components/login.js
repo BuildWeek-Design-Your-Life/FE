@@ -71,13 +71,10 @@ const Login = ({ history }) => {
                 value={creds.password}
               />
             </FormGroup>
-
             <Row className="login-btn">
-              <Link to="/dashboard">
-                <Button block squared>
-                  Login
-                </Button>
-              </Link>
+              <Button block squared>
+                Login
+              </Button>
             </Row>
 
             <Row className="login-btn">

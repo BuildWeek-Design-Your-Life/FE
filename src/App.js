@@ -65,7 +65,7 @@ function App() {
       <ActivityContext.Provider value={{ activitiesArray }}>
         <div className="App">
           <Menu />
-          <Route exact path="/" component={Home} />
+
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/activity" component={ActivitiesList} />
