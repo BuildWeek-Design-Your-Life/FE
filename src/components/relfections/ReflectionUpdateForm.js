@@ -10,6 +10,7 @@ import {
   FormTextarea,
   FormGroup
 } from "shards-react";
+import { Redirect } from "react-router";
 
 const ReflectionUpdateForm = props => {
   console.log(props);
@@ -18,7 +19,8 @@ const ReflectionUpdateForm = props => {
     insights: "",
     trends: ""
   });
-
+  const { from } = props.location.state || "/update-reflection";
+  const { fireRedirect } = updateReflection;
   const handleChange = e =>
     setupdateReflection({
       ...updateReflection,
@@ -33,15 +35,18 @@ const ReflectionUpdateForm = props => {
         updateReflection
       )
       .then(res => {
-        console.log("put req", res);
-        props.history.push("/reflections");
+        setTimeout(function() {
+          window.location.reload();
+        }, 1);
+        console.log(res);
+        props.history.push("/dashboard");
       })
       .catch(err => console.log(err.response));
   };
 
   return (
     <Container className="update-form-container">
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <label htmlFor="#username">
             <h1>Update Reflection</h1>
@@ -85,6 +90,7 @@ const ReflectionUpdateForm = props => {
         <Button block squared onClick={handleSubmit}>
           Update Form
         </Button>
+        {fireRedirect && <Redirect to={from} to={"/dashboard"} />}
       </Form>
     </Container>
   );
