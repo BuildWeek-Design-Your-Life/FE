@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Better Professor Front End
 
-## Available Scripts
+## Description
+This app helps you figure out which activites bring you enjoyment, energy, and engagement. These clues are the first step you need to take to design your ideal life.
+The journal includes an activity log and a reflection log. Activity logs record daily your main activities, and a guage to show how engaged and energized you were. Reflection logs are done once a week to record your trends, insights and suprises as to what activities work and don't work for you.
 
-In the project directory, you can run:
+## Getting Started
+For an example of how to implement this code on the client side see the link below: 
+https://github.com/BuildWeek-Design-Your-Life/FE
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prerequisites
+All of the below dependencies can be installed using:
+npm install
+npm add < name_of_dependency >
+npm start
+for dev dependencies simply add --dev after the < name_of_dependency >
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Installation
+This project was created using yarn and designed for react client side. Other dependencies include:
+```
+  "dependencies": {
+    "@babel/code-frame": {
+      "version": "7.5.5",
+      "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.5.5.tgz",
+      "integrity": "sha512-27d4lZoomVyo51VegxI20xZPuSHusqbQag/ztrBC7wegWoQ1nLREPVSKSW8byhTlzTKyNE4ifaTA6lCp7JjpFw==",
+      "requires": {
+        "@babel/highlight": "^7.0.0"
+      }
+```
 
-### `npm test`
+Examples of Tables
+```
+User table {
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+email<-- Required
+username <-- Required
+password <-- Required }
+Usage
+EndPoints (login, dashboard, activity, reflections)
+User
+```
 
-### `npm run build`
+## Register a user - POST
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://dyl-login.netlify.com/register
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Login - POST
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://dyl-login.netlify.com/login
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Dashboard -POST
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://dyl-login.netlify.com/dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Add Activity -POST
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+https://dyl-login.netlify.com/add-activity
 
-## Learn More
+## Add Reflection -POST
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://dyl-login.netlify.com/add-reflection
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Edit Activity -POST
 
-### Code Splitting
+https://dyl-login.netlify.com/update-activity/:id
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Edit Reflection -POST
 
-### Analyzing the Bundle Size
+https://dyl-login.netlify.com/update-reflection/:id
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Support
+- GITHUB: https://github.com/LambdaSchool 
+- email: jyoojs@gmail.com
 
-### Making a Progressive Web App
+## Authors and acknowledgment
+This project was made by Jason Yoo, Daniel Wallen and Richard Lawson
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Project status
+This project may have updates from time to time to keep it up to date so if you have an issue see the support section.
