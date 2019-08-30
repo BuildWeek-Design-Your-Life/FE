@@ -26,7 +26,7 @@ export default function ActivityCard(props) {
         console.log(res);
       });
   };
-
+  {
   return (
     <Container className="card-container">
       <Card className="card">
@@ -54,4 +54,5 @@ export default function ActivityCard(props) {
       </Card>
     </Container>
   );
+}
 }
