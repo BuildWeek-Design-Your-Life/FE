@@ -1,4 +1,4 @@
-# Better Professor Front End
+# DESIGN YOUR LIFE
 
 ## Description
 This app helps you figure out which activites bring you enjoyment, energy, and engagement. These clues are the first step you need to take to design your ideal life.
